@@ -1,0 +1,27 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Clicker Madness Auto farm", "DarkTheme")
+
+
+local Tab = Window:NewTab("Main")
+local Section = Tab:NewSection("Auto Click")
+Section:NewButton("Auto Click farm", "Auto clicks for you (you can't stop sorry)", function()
+while wait() do
+local args = {
+    [1] = 100000000
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Aero"):WaitForChild("AeroRemoteServices"):WaitForChild("ClickService"):WaitForChild("Click"):FireServer(unpack(args))
+end
+end)
+
+
+local Section = Tab:NewSection("Auto Farm Gems")
+Section:NewButton("Auto Farm Gems", "This will not work if you didn't turn on auto click)", function()
+while wait() do
+local args = {
+    [1] = 100000000
+}
+
+game:GetService("ReplicatedStorage"):WaitForChild("Aero"):WaitForChild("AeroRemoteServices"):WaitForChild("RebirthService"):WaitForChild("BuyRebirths"):FireServer(unpack(args))
+end
+end)
